@@ -34,7 +34,7 @@ TextView tvHello;
         String etPassword=sp.getString("Password",null);
         if(etUsername!= null&&etPassword!=null)
         {
-            tvHello.setText("welcome1 " + etUsername);
+            tvHello.setText("welcome " + etUsername);
 
         }
         running = false;
