@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FBFB"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/textview_runningApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-black"
+        android:shadowColor="#F8F2F2"
+        android:text="@string/running_app"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#A69E9E"
+        android:textColorHighlight="#131212"
+        android:textColorLink="#F9F9FA"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/botton_runningProgram"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/running_program"
+        app:backgroundTint="#3F51B5"
+        app:cornerRadius="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/botton_startRunning"
+        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintStart_toStartOf="@+id/botton_startRunning" />
+
+    <Button
+        android:id="@+id/botton_lastRuns"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="121dp"
+        android:text="@string/last_10_runs"
+        app:backgroundTint="#3F51B5"
+        app:cornerRadius="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/botton_runningProgram"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/botton_runningProgram"
+        app:layout_constraintTop_toBottomOf="@+id/botton_runningProgram" />
+
+    <Button
+        android:id="@+id/botton_startRunning"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="btnStart"
+        android:text="@string/start_running"
+        app:backgroundTint="#1BDF23"
+        app:cornerRadius="10000dp"
+        app:layout_constraintBottom_toTopOf="@+id/botton_runningProgram"
+        app:layout_constraintEnd_toEndOf="@+id/textview_runningApp"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="@+id/textview_runningApp" />
+
+    <ImageView
+        android:id="@+id/imageView_runner"
+        android:layout_width="184dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="64dp"
+        android:background="#F4F1F1"
+        app:layout_constraintEnd_toEndOf="@+id/textview_runningApp"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="@+id/textview_runningApp"
+        app:layout_constraintTop_toTopOf="@+id/textview_runningApp" />
+
+    <Button
+        android:id="@+id/button_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:backgroundTint="#938B8B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botton_lastRuns" />
+
+    <TextView
+        android:id="@+id/tvHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="182dp"
+        android:layout_marginBottom="44dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/botton_startRunning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_runner" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

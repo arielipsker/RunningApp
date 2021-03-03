@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Running_App</string>
+    <string name="good_luck">Good Luck</string>
+    <string name="stop_running">Stop running</string>
+    <string name="return_to_menu">Return to menu</string>
+    <string name="running_app">Running App</string>
+    <string name="running_program">Running program</string>
+    <string name="last_10_runs">Last 10 runs</string>
+    <string name="start_running">start running</string>
+</resources>
