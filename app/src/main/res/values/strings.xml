@@ -7,4 +7,6 @@
     <string name="running_program">Running program</string>
     <string name="last_10_runs">Last 10 runs</string>
     <string name="start_running">start running</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps2">Map</string>
 </resources>

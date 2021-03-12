@@ -16,7 +16,7 @@ import java.util.Locale;
 public class startRunningActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tv;
-    Button btn;
+    Button btn, btnMap;
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -33,6 +33,8 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
         tv = (TextView) findViewById(R.id.tv_showTime);
         btn = findViewById(R.id.botton_stopRunning);
         btn.setOnClickListener(this);
+        btnMap = findViewById(R.id.btnMap);
+        btnMap.setOnClickListener(this);
 
     }
 
@@ -55,6 +57,11 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
             stopService(new Intent(this,StopwatchService.class));
             finish();
         }
+        if (v == btnMap)
+        {
+            startActivity(new Intent(this,MapsActivity2.class));
+        }
+
 
     }
 }
