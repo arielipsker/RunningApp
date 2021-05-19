@@ -59,7 +59,7 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
         }
         if (v == btnMap)
         {
-            startActivity(new Intent(this,MapsActivity2.class));
+            startActivity(new Intent(this,MapsActivity.class));
         }
 
 

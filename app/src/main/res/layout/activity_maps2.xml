@@ -6,4 +6,10 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapsActivity2" />
+    tools:context=".MapsActivity2" >
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></Chronometer>
+</fragment>
