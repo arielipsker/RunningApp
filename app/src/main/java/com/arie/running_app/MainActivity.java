@@ -1,15 +1,20 @@
 package com.arie.running_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,6 +23,7 @@ Dialog dialog;
 Button button_dialog, btnLogin, botton_lastRuns;
 EditText etUsername, etPassword;
 TextView tvHello;
+MenuItem login;
     private boolean running;
 
     @Override
@@ -40,6 +46,25 @@ TextView tvHello;
         running = false;
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.login_dialog);
+        etUsername = dialog.findViewById(R.id.etUserName);
+        etPassword = dialog.findViewById(R.id.etPassword);
+        btnLogin = dialog.findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(this);
+        dialog.show();
+        return super.onOptionsItemSelected(item);
+    }
+
 
     public void btnStart(View view) {
         Intent intent = new Intent(this, startRunningActivity.class);
