@@ -1,8 +1,15 @@
 package com.arie.running_app;
 
+/**Represents the distance between two points.  */
 public class Distance  {
 
 
+    /**distance calculate the distance between two points
+     * distance activates when the user starts running and the GPS is on.
+     * @param lat1 latitude from the current point.
+     * @param lat2 latitude from the next point.
+     * @param lon1 lontitude from the current point.
+     * @param lon2 lontitude from the next point.*/
     public static double distance(double lat1, double lat2, double lon1,double lon2)
     {
     // The math module contains a function
@@ -16,9 +23,7 @@ public class Distance  {
     // Haversine formula
     double dlon = lon2 - lon1;
     double dlat = lat2 - lat1;
-    double a = Math.pow(Math.sin(dlat / 2), 2)
-            + Math.cos(lat1) * Math.cos(lat2)
-            * Math.pow(Math.sin(dlon / 2),2);
+    double a = Math.pow(Math.sin(dlat / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon / 2),2);
 
     double c = 2 * Math.asin(Math.sqrt(a));
 

@@ -1,16 +1,11 @@
 package com.arie.running_app;
 
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.view.View;
 import android.widget.Button;
 
 import android.widget.Chronometer;
@@ -18,16 +13,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback {
 
@@ -107,7 +99,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
         return false;
     }
-     tracker act = new tracker();
+     Tracker act = new Tracker();
 
 
     public void start(GoogleMap mMap) {

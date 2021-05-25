@@ -10,4 +10,18 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_maps2">Map</string>
     <string name="login">login</string>
+    <string name="weight">weight</string>
+    <string name="height">height</string>
+    <string name="calculateBMI">calculateBMI</string>
+    <string name="very_severely_underweight">very_severely_underweight</string>
+    <string name="severely_underweight">severely_underweight</string>
+    <string name="underweight">underweight</string>
+    <string name="normal" />
+    <string name="overweight" />
+    <string name="obese_class_i" />
+    <string name="obese_class_ii" />
+    <string name="obese_class_iii" />
+    <string name="bmi_calculator">BMI calculator</string>
+    <string name="heightt">Height</string>
+    <string name="textviewEditText">TextView</string>
 </resources>

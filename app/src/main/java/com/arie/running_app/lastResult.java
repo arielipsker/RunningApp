@@ -1,27 +1,27 @@
 package com.arie.running_app;
 
 public class lastResult {
-    private int time;
-    private int distance;
+    private String time;
+    private Date date;
 
-    public lastResult(int time, int distance) {
+    public lastResult(String time, Date date) {
         this.time = time;
-        this.distance = distance;
+        this.date = date;
     }
 
-    public int getTime() {
+    public String getTime() {
         return time;
     }
 
-    public int getDistance() {
-        return distance;
+    public Date getDate() {
+        return date;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

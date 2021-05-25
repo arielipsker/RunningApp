@@ -8,6 +8,7 @@ import android.content.ClipData;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -80,13 +81,15 @@ MenuItem login;
     public void onClick(View v) {
         if(v==button_dialog)
         {
-            dialog = new Dialog(this);
-            dialog.setContentView(R.layout.login_dialog);
-            etUsername = dialog.findViewById(R.id.etUserName);
-            etPassword = dialog.findViewById(R.id.etPassword);
-            btnLogin = dialog.findViewById(R.id.btnLogin);
-            btnLogin.setOnClickListener(this);
-            dialog.show();
+            Intent intentt = new Intent(MainActivity.this, BMI.class);
+            startActivity(intentt);
+            //dialog = new Dialog(this);
+            //dialog.setContentView(R.layout.activity_bmi);
+            //etUsername = dialog.findViewById(R.id.etUserName);
+            //etPassword = dialog.findViewById(R.id.etPassword);
+            //btnLogin = dialog.findViewById(R.id.btnLogin);
+            //btnLogin.setOnClickListener(this);
+            //dialog.show();
 
         }
         if(v == btnLogin){

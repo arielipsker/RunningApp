@@ -82,7 +82,7 @@
         android:id="@+id/button_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="BMI"
         app:backgroundTint="#938B8B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
