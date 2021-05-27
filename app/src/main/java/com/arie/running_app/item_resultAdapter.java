@@ -14,29 +14,32 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 public class item_resultAdapter extends ArrayAdapter<lastResult> {
-    Context context;
-    List<lastResult> objects;
 
-    public item_resultAdapter(Context context, int resource, int textViewResourceId, List<lastResult> objects) {
-        super(context, resource, textViewResourceId, objects);
+        Context context;
+        List<lastResult> objects;
+        public item_resultAdapter(Context context, int resource, int textViewResourceId, List<lastResult> objects) {
+            super(context, resource, textViewResourceId, objects);
 
-        this.context=context;
-        this.objects=objects;
-    }
+            this.context=context;
+            this.objects=objects;
+        }
 
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
-    {
-        LayoutInflater layoutInflater = ((Activity)context).getLayoutInflater();
-        View view = layoutInflater.inflate(R.layout.item_result,parent,false);
-        TextView tvTime = (TextView)view.findViewById(R.id.tvTime);
-        TextView tvDate = (TextView)view.findViewById(R.id.tvDate);
-        lastResult temp = objects.get(position);
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
 
-        tvTime.setText(String.valueOf(temp.getTime()));
-        tvDate.setText(String.valueOf(temp.getDate()));
 
-        return view;
-    }
+            LayoutInflater layoutInflater = ((Activity)context).getLayoutInflater();
+            View view = layoutInflater.inflate(R.layout.item_result,parent,false);
+
+            TextView tvTitle = (TextView)view.findViewById(R.id.tvDate);
+            TextView tvSubTitle = (TextView)view.findViewById(R.id.tvTime);
+            lastResult temp = objects.get(position);
+
+            tvTitle.setText(temp.getDate());
+            tvSubTitle.setText(temp.getTime());
+
+
+
+            return view;
+        }
 }
