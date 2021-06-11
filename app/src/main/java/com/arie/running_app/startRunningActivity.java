@@ -21,6 +21,7 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
     Button btn, btnMap;
     SharedPreferences sp;
     String time;
+    int numberTimer;
 
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
@@ -42,6 +43,8 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
         btn.setOnClickListener(this);
         btnMap = findViewById(R.id.btnMap);
         btnMap.setOnClickListener(this);
+         sp = getSharedPreferences("details1", 0);
+         numberTimer = sp.getInt("numberTimer",0);
 
     }
 
@@ -54,7 +57,7 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onPause() {
         super.onPause();
-        unregisterReceiver(broadcastReceiver);
+
 
     }
 
@@ -62,10 +65,23 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View v) {
         if(v == btn){
             stopService(new Intent(this,StopwatchService.class));
+            unregisterReceiver(broadcastReceiver);
             sp = getSharedPreferences("details1",0);
             SharedPreferences.Editor editor=sp.edit();
             Toast.makeText(this,"time"+time,Toast.LENGTH_LONG).show();
-            editor.putString("lastTimer",time);
+            if (numberTimer == 0)
+            {
+                editor.putString("timer1",time);
+                editor.putInt("numberTimer",numberTimer++);
+            }
+            else if (numberTimer == 1){
+                editor.putString("timer2",time);
+                editor.putInt("numberTimer",numberTimer++);
+            }
+
+
+
+
             editor.putInt("numberTimer",1);
             editor.putString("9Timer",time);
             editor.putInt("numberTimer",2);

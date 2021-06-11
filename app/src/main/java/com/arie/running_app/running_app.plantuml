@@ -1,0 +1,229 @@
+@startuml
+
+title __RUNNING_APP's Class Diagram__\n
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.AnimationActivity {
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.BMI {
+        - etHeight : EditText
+        - etWeight : EditText
+        - tvResult : TextView
+        + calculateBMI()
+        # onCreate()
+        - displayBMI()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.Date {
+        ~ day : int
+        ~ month : int
+        ~ year : int
+        + Date()
+        + getCurrentDate()
+        + getDat()
+        + getMonth()
+        + getYear()
+        + setDay()
+        + setMonth()
+        + setYear()
+        + toString()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.Distance {
+        {static} + distance()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.Last10runs_Activity {
+        ~ lastResultArrayList : ArrayList<lastResult>
+        ~ lv : ListView
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.MainActivity {
+        ~ botton_lastRuns : Button
+        ~ btnLogin : Button
+        ~ button_dialog : Button
+        ~ dialog : Dialog
+        ~ etPassword : EditText
+        ~ etUsername : EditText
+        ~ login : MenuItem
+        ~ sp : SharedPreferences
+        ~ tvHello : TextView
+        - running : boolean
+        + btnStart()
+        + onClick()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.MapsActivity {
+        ~ a : boolean
+        ~ chronometer : Chronometer
+        ~ start : Button
+        - mMap : GoogleMap
+        - pauseoffset : long
+        - running : boolean
+        + onMapReady()
+        + start()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.MapsActivity2 {
+        ~ a : boolean
+        ~ chronometer : Chronometer
+        ~ line : Polyline
+        ~ mapFragment : SupportMapFragment
+        ~ start : Button
+        - pauseoffset : long
+        - running : boolean
+        + onMapReady()
+        + start()
+        # onCreate()
+        - initMap()
+        - isGoogleApiAvailabe()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.Stats {
+        - avgspeed : double
+        - distance : double
+        - time : String
+        + Stats()
+        + Stats()
+        + getAvgspeed()
+        + getDistance()
+        + getTime()
+        + setAvgspeed()
+        + setDistance()
+        + setTime()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.StopwatchService {
+        - running : boolean
+        - seconds : long
+        + StopwatchService()
+        + onDestroy()
+        # onHandleIntent()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.Tracker {
+        - activity : Activity
+        - b : LatLng
+        - d : double
+        - m1 : LatLng
+        - map : GoogleMap
+        - x : boolean
+        + getActivity()
+        + getM1()
+        + getMap()
+        + getd1()
+        + isX()
+        + run()
+        + setActivity()
+        + setM1()
+        + setMap()
+        + setX()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.item_resultAdapter {
+        ~ context : Context
+        ~ objects : List<lastResult>
+        + getView()
+        + item_resultAdapter()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.lastResult {
+        - date : String
+        - time : String
+        + getDate()
+        + getTime()
+        + lastResult()
+        + setDate()
+        + setTime()
+    }
+  }
+  
+
+  namespace com.arie.running_app {
+    class com.arie.running_app.startRunningActivity {
+        ~ broadcastReceiver : BroadcastReceiver
+        ~ btn : Button
+        ~ btnMap : Button
+        ~ numberTimer : int
+        ~ sp : SharedPreferences
+        ~ time : String
+        ~ tv : TextView
+        + onClick()
+        # onCreate()
+        # onPause()
+        # onResume()
+    }
+  }
+  
+
+  com.arie.running_app.AnimationActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.arie.running_app.BMI -up-|> androidx.appcompat.app.AppCompatActivity
+  com.arie.running_app.Last10runs_Activity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.arie.running_app.Last10runs_Activity o-- com.arie.running_app.Date : date
+  com.arie.running_app.Last10runs_Activity o-- com.arie.running_app.item_resultAdapter : item_resultAdapter
+  com.arie.running_app.MainActivity .up.|> android.view.View.OnClickListener
+  com.arie.running_app.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.arie.running_app.MapsActivity .up.|> com.google.android.gms.maps.OnMapReadyCallback
+  com.arie.running_app.MapsActivity -up-|> androidx.fragment.app.FragmentActivity
+  com.arie.running_app.MapsActivity o-- com.arie.running_app.Tracker : act
+  com.arie.running_app.MapsActivity2 .up.|> com.google.android.gms.maps.OnMapReadyCallback
+  com.arie.running_app.MapsActivity2 -up-|> androidx.fragment.app.FragmentActivity
+  com.arie.running_app.MapsActivity2 o-- com.arie.running_app.Tracker : act
+  com.arie.running_app.StopwatchService -up-|> android.app.IntentService
+  com.arie.running_app.Tracker .up.|> java.lang.Runnable
+  com.arie.running_app.item_resultAdapter -up-|> android.widget.ArrayAdapter
+  com.arie.running_app.startRunningActivity .up.|> android.view.View.OnClickListener
+  com.arie.running_app.startRunningActivity -up-|> androidx.appcompat.app.AppCompatActivity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

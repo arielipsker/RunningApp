@@ -67,16 +67,6 @@
         app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="@+id/textview_runningApp" />
 
-    <ImageView
-        android:id="@+id/imageView_runner"
-        android:layout_width="184dp"
-        android:layout_height="118dp"
-        android:layout_marginTop="64dp"
-        android:background="#F4F1F1"
-        app:layout_constraintEnd_toEndOf="@+id/textview_runningApp"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="@+id/textview_runningApp"
-        app:layout_constraintTop_toTopOf="@+id/textview_runningApp" />
 
     <Button
         android:id="@+id/button_dialog"
@@ -93,12 +83,11 @@
         android:id="@+id/tvHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="182dp"
         android:layout_marginBottom="44dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/botton_startRunning"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView_runner" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_runningApp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
