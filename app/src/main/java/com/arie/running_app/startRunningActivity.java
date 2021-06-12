@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
+import java.util.Queue;
 
 public class startRunningActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,6 +23,7 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
     SharedPreferences sp;
     String time;
     int numberTimer;
+    Date date = new Date(1,2,3);
 
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
@@ -43,8 +45,8 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
         btn.setOnClickListener(this);
         btnMap = findViewById(R.id.btnMap);
         btnMap.setOnClickListener(this);
-         sp = getSharedPreferences("details1", 0);
-         numberTimer = sp.getInt("numberTimer",0);
+        sp = getSharedPreferences("details1", 0);
+        numberTimer = sp.getInt("numberTimer",0);
 
     }
 
@@ -69,39 +71,55 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
             sp = getSharedPreferences("details1",0);
             SharedPreferences.Editor editor=sp.edit();
             Toast.makeText(this,"time"+time,Toast.LENGTH_LONG).show();
-            if (numberTimer == 0)
-            {
-                editor.putString("timer1",time);
-                editor.putInt("numberTimer",numberTimer++);
+            for (int i = 9; i > 0 ; i--) {
+                int j = i;
+                if (sp.contains(String.valueOf(j))) {
+                    j++;
+                    editor.putString(String.valueOf(j),sp.getString(String.valueOf(i),""));
+                }
             }
-            else if (numberTimer == 1){
-                editor.putString("timer2",time);
-                editor.putInt("numberTimer",numberTimer++);
-            }
+            editor.putString("1", time + "-" + date.getCurrentDate());
 
 
 
 
-            editor.putInt("numberTimer",1);
-            editor.putString("9Timer",time);
-            editor.putInt("numberTimer",2);
-            editor.putString("8Timer",time);
-            editor.putInt("numberTimer",3);
-            editor.putString("7Timer",time);
-            editor.putInt("numberTimer",4);
-            editor.putString("6Timer",time);
-            editor.putInt("numberTimer",5);
-            editor.putString("5Timer",time);
-            editor.putInt("numberTimer",6);
-            editor.putString("4Timer",time);
-            editor.putInt("numberTimer",7);
-            editor.putString("3Timer",time);
-            editor.putInt("numberTimer",8);
-            editor.putString("2Timer",time);
-            editor.putInt("numberTimer",9);
-            editor.putString("firstTimer",time);
-            editor.putInt("numberTimer",10);
+
+//            if (numberTimer == 0)
+//            {
+//                editor.putString("timer1",time);
+//                editor.putInt("numberTimer",numberTimer++);
+//            }
+//            else if (numberTimer == 1){
+//                editor.putString("timer2",time);
+//                editor.putInt("numberTimer",numberTimer++);
+//            }
+//
+//
+//
+//
+//            editor.putInt("numberTimer",1);
+//            editor.putString("9Timer",time);
+//            editor.putInt("numberTimer",2);
+//            editor.putString("8Timer",time);
+//            editor.putInt("numberTimer",3);
+//            editor.putString("7Timer",time);
+//            editor.putInt("numberTimer",4);
+//            editor.putString("6Timer",time);
+//            editor.putInt("numberTimer",5);
+//            editor.putString("5Timer",time);
+//            editor.putInt("numberTimer",6);
+//            editor.putString("4Timer",time);
+//            editor.putInt("numberTimer",7);
+//            editor.putString("3Timer",time);
+//            editor.putInt("numberTimer",8);
+//            editor.putString("2Timer",time);
+//            editor.putInt("numberTimer",9);
+//            editor.putString("firstTimer",time);
+//            editor.putInt("numberTimer",10);
             editor.commit();
+            Intent intent = new Intent();
+            intent.putExtra("RUNNING", false);
+            setResult(1, intent);
             finish();
         }
         if (v == btnMap)

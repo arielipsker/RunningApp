@@ -67,13 +67,30 @@ MenuItem login;
     }
 
 
+    public void stopRunning() {
+        this.running = false;
+    }
+
+    public void startRunning() {
+        this.running = true;
+    }
+
     public void btnStart(View view) {
         Intent intent = new Intent(this, startRunningActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent,1);
         if (!running) {
             Intent serivceIntent = new Intent(this,StopwatchService.class);
             startService(serivceIntent);
-            running = true;
+            startRunning();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            running = data.getBooleanExtra("RUNNING", running);
         }
     }
 
