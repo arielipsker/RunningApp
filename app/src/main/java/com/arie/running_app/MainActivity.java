@@ -67,9 +67,7 @@ MenuItem login;
     }
 
 
-    public void stopRunning() {
-        this.running = false;
-    }
+
 
     public void startRunning() {
         this.running = true;

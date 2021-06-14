@@ -80,42 +80,6 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
             }
             editor.putString("1", time + "-" + date.getCurrentDate());
 
-
-
-
-
-//            if (numberTimer == 0)
-//            {
-//                editor.putString("timer1",time);
-//                editor.putInt("numberTimer",numberTimer++);
-//            }
-//            else if (numberTimer == 1){
-//                editor.putString("timer2",time);
-//                editor.putInt("numberTimer",numberTimer++);
-//            }
-//
-//
-//
-//
-//            editor.putInt("numberTimer",1);
-//            editor.putString("9Timer",time);
-//            editor.putInt("numberTimer",2);
-//            editor.putString("8Timer",time);
-//            editor.putInt("numberTimer",3);
-//            editor.putString("7Timer",time);
-//            editor.putInt("numberTimer",4);
-//            editor.putString("6Timer",time);
-//            editor.putInt("numberTimer",5);
-//            editor.putString("5Timer",time);
-//            editor.putInt("numberTimer",6);
-//            editor.putString("4Timer",time);
-//            editor.putInt("numberTimer",7);
-//            editor.putString("3Timer",time);
-//            editor.putInt("numberTimer",8);
-//            editor.putString("2Timer",time);
-//            editor.putInt("numberTimer",9);
-//            editor.putString("firstTimer",time);
-//            editor.putInt("numberTimer",10);
             editor.commit();
             Intent intent = new Intent();
             intent.putExtra("RUNNING", false);
