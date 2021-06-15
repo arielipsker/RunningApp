@@ -19,7 +19,7 @@ import java.util.Queue;
 public class startRunningActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tv;
-    Button btn, btnMap;
+    Button btn, btnMap,btnReturn;
     SharedPreferences sp;
     String time;
     int numberTimer;
@@ -45,6 +45,8 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
         btn.setOnClickListener(this);
         btnMap = findViewById(R.id.btnMap);
         btnMap.setOnClickListener(this);
+        btnReturn = findViewById(R.id.button2_Return);
+        btnReturn.setOnClickListener(this);
         sp = getSharedPreferences("details1", 0);
         numberTimer = sp.getInt("numberTimer",0);
 
@@ -89,6 +91,10 @@ public class startRunningActivity extends AppCompatActivity implements View.OnCl
         if (v == btnMap)
         {
             startActivity(new Intent(this,MapsActivity.class));
+        }
+        if (v == btnReturn){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 
 

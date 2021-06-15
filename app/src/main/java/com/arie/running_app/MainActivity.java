@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 SharedPreferences sp;
 Dialog dialog;
-Button button_dialog, btnLogin, botton_lastRuns;
+Button button_dialog, btnLogin, botton_lastRuns,btnRunningProgram;
 EditText etUsername, etPassword;
 TextView tvHello;
 MenuItem login;
@@ -34,6 +34,8 @@ MenuItem login;
         sp = getSharedPreferences("details1",0);
         button_dialog = findViewById(R.id.button_dialog);
         button_dialog.setOnClickListener(this);
+        btnRunningProgram = findViewById(R.id.botton_runningProgram);
+        btnRunningProgram.setOnClickListener(this);
         botton_lastRuns = findViewById(R.id.botton_lastRuns);
         botton_lastRuns.setOnClickListener(this);
         tvHello=findViewById(R.id.tvHello);
@@ -119,6 +121,10 @@ MenuItem login;
         }
         if(v==botton_lastRuns){
             Intent intent = new Intent(this, Last10runs_Activity.class);
+            startActivity(intent);
+        }
+        if(v==btnRunningProgram){
+            Intent intent = new Intent(this, RunningProgramActivity.class);
             startActivity(intent);
         }
     }

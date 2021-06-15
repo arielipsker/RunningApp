@@ -17,6 +17,7 @@ public class item_resultAdapter extends ArrayAdapter<lastResult> {
 
         Context context;
         List<lastResult> objects;
+
         public item_resultAdapter(Context context, int resource, int textViewResourceId, List<lastResult> objects) {
             super(context, resource, textViewResourceId, objects);
 
@@ -33,6 +34,7 @@ public class item_resultAdapter extends ArrayAdapter<lastResult> {
 
             TextView tvTitle = (TextView)view.findViewById(R.id.tvDate);
             TextView tvSubTitle = (TextView)view.findViewById(R.id.tvTime);
+
             lastResult temp = objects.get(position);
 
             tvTitle.setText(temp.getDate());

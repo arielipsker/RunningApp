@@ -21,9 +21,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Running_App">
+        <activity android:name=".InfintyLevelActivity"></activity>
+        <activity android:name=".ThirdLevelActivity" />
+        <activity
+            android:name=".SecondLevelActivity"
+            android:label="@string/title_activity_second_level"
+            android:theme="@style/Theme.Running_App.NoActionBar" />
+        <activity android:name=".FirstLevelActivity" />
+        <activity
+            android:name=".RunningProgramActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.Running_App.NoActionBar" />
         <activity android:name=".AnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -48,15 +60,11 @@
         <activity android:name=".Last10runs_Activity" />
         <activity android:name=".BMI" />
         <activity android:name=".startRunningActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
 
         <service
             android:name=".StopwatchService"
             tools:ignore="Instantiatable" />
-
-
     </application>
 
 </manifest>

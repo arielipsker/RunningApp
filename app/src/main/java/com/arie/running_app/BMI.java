@@ -29,27 +29,28 @@ public class BMI extends AppCompatActivity implements View.OnClickListener {
 
         private void displayBMI(float bmi){
             String bmiLabel = "";
-            if (bmi<20){
-                bmiLabel = getString(R.string.very_severely_underweight);
+            if (bmi<15){
+                bmiLabel = "very_severely_underweight";
+            }
+            else if (bmi<16 && bmi>15){
+                bmiLabel = "severely_underweight";
+            }
+            else if (bmi<18.5 && bmi>16){
+                bmiLabel = "underweight";
+            }
+            else if (bmi<25 && bmi>18.5){
+                bmiLabel = "normal";
+            }
+            else if (bmi<30 && bmi>25){
+                bmiLabel = "overweight";
+            }
+            else if (bmi<35 && bmi>30){
+                bmiLabel = "severely_overweight";
+            }
+            else if (bmi>35){
+                bmiLabel = "very_severely_overweight";
             }
 
-//            if (Float.compare(bmi, 15f) <= 0) {
-//                bmiLabel = getString(R.string.very_severely_underweight);
-//            } else if (Float.compare(bmi, 15f) > 0  &&  Float.compare(bmi, 16f) <= 0) {
-//                bmiLabel = getString(R.string.severely_underweight);
-//            } else if (Float.compare(bmi, 16f) > 0  &&  Float.compare(bmi, 18.5f) <= 0) {
-//                bmiLabel = getString(R.string.underweight);
-//            } else if (Float.compare(bmi, 18.5f) > 0  &&  Float.compare(bmi, 25f) <= 0) {
-//                bmiLabel = getString(R.string.normal);
-//            } else if (Float.compare(bmi, 25f) > 0  &&  Float.compare(bmi, 30f) <= 0) {
-//                bmiLabel = getString(R.string.overweight);
-//            } else if (Float.compare(bmi, 30f) > 0  &&  Float.compare(bmi, 35f) <= 0) {
-//                bmiLabel = getString(R.string.obese_class_i);
-//            } else if (Float.compare(bmi, 35f) > 0  &&  Float.compare(bmi, 40f) <= 0) {
-//                bmiLabel = getString(R.string.obese_class_ii);
-//            } else {
-//                bmiLabel = getString(R.string.obese_class_iii);
-//            }
 
             bmiLabel = bmi + "\n\n" + bmiLabel;
             tvResult.setText(bmiLabel);
