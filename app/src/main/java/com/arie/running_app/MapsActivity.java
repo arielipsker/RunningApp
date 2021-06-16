@@ -55,8 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps2);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         //act = new Tracker(fusedLocationProviderClient);
     }
@@ -78,13 +77,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(32.077130835815716, 34.8722955319204);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Start"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-//        mMap.setMinZoomPreference(7.0f);
-//        mMap.setMaxZoomPreference(14.0f);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 10f));
-        mMap.addPolyline(new PolylineOptions().add(new LatLng(32.077203563042346, 34.8722418877401), new LatLng(32.09083758267705, 34.86167193191998)).width(5).color(Color.RED));
+        LatLng start = new LatLng(32.071378, 34.876048);
+        LatLng middle = new LatLng(32.071692, 34.867566);
+        LatLng finish = new LatLng(32.070292, 34.862255);
+        LatLng streerWorkout = new LatLng(32.071301, 34.865710);
+        LatLng streerWorkout1 = new LatLng(32.079128, 34.876997);
+        mMap.addMarker(new MarkerOptions().position(start).title("Start"));
+        mMap.addMarker(new MarkerOptions().position(finish).title("Finish"));
+        mMap.addMarker(new MarkerOptions().position(streerWorkout).title("StreerWorkout"));
+        mMap.addMarker(new MarkerOptions().position(streerWorkout1).title("StreerWorkout"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(start, 13f));
+        mMap.addPolyline(new PolylineOptions().add(start, middle).width(5).color(Color.RED));
+        mMap.addPolyline(new PolylineOptions().add(middle, finish).width(5).color(Color.RED));
 
         //start(mMap);
     }
