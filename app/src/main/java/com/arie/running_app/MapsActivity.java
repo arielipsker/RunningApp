@@ -83,7 +83,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng streerWorkout = new LatLng(32.071301, 34.865710);
         LatLng streerWorkout1 = new LatLng(32.079128, 34.876997);
         mMap.addMarker(new MarkerOptions().position(start).title("Start"));
-        mMap.addMarker(new MarkerOptions().position(finish).title("Finish"));
+        mMap.addMarker(new MarkerOptions().position(finish).title("Finish").snippet("you run 2 km"));
+        mMap.addMarker(new MarkerOptions().position(middle).title("Middle").snippet("you run 1 km"));
         mMap.addMarker(new MarkerOptions().position(streerWorkout).title("StreerWorkout"));
         mMap.addMarker(new MarkerOptions().position(streerWorkout1).title("StreerWorkout"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(start, 13f));

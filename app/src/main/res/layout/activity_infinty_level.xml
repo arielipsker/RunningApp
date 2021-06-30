@@ -42,10 +42,11 @@
         android:id="@+id/tvExplanation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
         android:text="you completed all levls"
         app:layout_constraintEnd_toEndOf="@+id/tvWellDone"
         app:layout_constraintStart_toStartOf="@+id/tvWellDone"
-        tools:layout_editor_absoluteY="282dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWellDone" />
 
     <TextView
         android:id="@+id/tvExplanation1"
@@ -61,7 +62,7 @@
         android:id="@+id/tvExplanation2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="do all level again"
+        android:text="do all levels again"
         app:layout_constraintEnd_toEndOf="@+id/tvWellDone"
         app:layout_constraintStart_toStartOf="@+id/tvWellDone"
         app:layout_constraintTop_toBottomOf="@+id/tvExplanation1" />
